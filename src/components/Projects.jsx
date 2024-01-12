@@ -1,7 +1,7 @@
 import form from '../img/1.jpg';
 import blog from '../img/2.jpg';
 import game from '../img/3.jpg';
-import commerce from '../img/4.jpg';
+import commerce from '../img/4.jpg'
 
 const Projects = () => {
   return (
