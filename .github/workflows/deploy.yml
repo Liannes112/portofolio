@@ -42,13 +42,18 @@ jobs:
           name: production-files
           path: ./dist
 
+      - name: Debug - List contents of ./dist
+        run: ls -la ./dist
+        shell: bash
+
       - name: Set up Git
         run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          cd ./dist
+          git config user.name "Liannes112"
+          git config user.email "Liannes112@users.noreply.github.com"
           git remote rm origin
-          git remote add origin https://github.com/${{ github.repository }}.git
-        working-directory: ./dist
+          git remote add origin https://github.com/Liannes112/portofolio.git
+        shell: bash
 
       - name: Deploy to GitHub Pages
         run: |
