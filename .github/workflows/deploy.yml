@@ -42,6 +42,14 @@ jobs:
           name: production-files
           path: ./dist
 
+      - name: Set up Git
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git remote rm origin
+          git remote add origin https://github.com/${{ github.repository }}.git
+        working-directory: ./dist
+
       - name: Deploy to GitHub Pages
         run: |
           npm install -g gh-pages
